@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisoners</title>
+    <link rel='stylesheet' href='css/main.css' />
+    <link rel='stylesheet' href='css/all.min.css' />
+    <!-- <link rel='stylesheet' href='css/normalize.css' /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+    <link rel='shortcut icon' href='favicon.ico'>
+</head>
+
+<body>
+    <!-- Start Setting Box -->
+    <div class='settings-box'>
+        <div class='toggle-settings'>
+            <i class="fas fa-cog fa-spin"></i>
+        </div>
+        <div class='settings-container'>
+            <div class='option-box'>
+                <h4 id='colors'>Colors</h4>
+                <ul class='colors-list'>
+                    <li class='active' data-color='#3566ec'></li>
+                    <li data-color='#E91E63'></li>
+                    <li data-color='#009688'></li>
+                    <li data-color='#03A9F4'></li>
+                    <li data-color='#4CAF50'></li>
+                </ul>
+            </div>
+            <div class='option-box'>
+                <h4 id='random-bg'>Random Backgrounds</h4>
+                <div class='random-backgrounds'>
+                    <span id='yes' class='yes active' data-background='yes'>Yes</span>
+                    <span id='no' class='no' data-background='no'>No</span>
+                </div>
+            </div>
+            <div class='option-box'>
+                <h4 id='bullets'>Show Bullets</h4>
+                <div class='bullets-option'>
+                    <span id='show' class='yes active' data-display='show'>Show</span>
+                    <span id='hide' class='no' data-display='hide'>Hide</span>
+                </div>
+            </div>
+            <button id='reset' class='reset-options'>Reset</button>
+        </div>
+    </div>
+    <!-- End Setting Box -->
+    <!-- Start Nav Bullet -->
+    <div class='nav-bullets'>
+        <div class='bullet' data-section='.israeli-prison'>
+            <div id='israeli-prison' class='tooltip'>Israeli Occupation Prisons</div>
+        </div>
+        <div class='bullet' data-section='.figures'>
+            <div id='stats' class='tooltip'>Statistics and Figures</div>
+        </div>
+        <div class='bullet' data-section='.israeli-torture'>
+            <div id='torture' class='tooltip'>Torture and Cruel Treatment</div>
+        </div>
+        <div class='bullet' data-section='.pal-prisoners'>
+            <div id='pal-prisoners' class='tooltip'>Palestinian Prisoners</div>
+        </div>
+        <div class='bullet' data-section='.stories'>
+            <div id='stroies' class='tooltip'>Stories of Prisoners</div>
+        </div>
+        <div class='bullet' data-section='.contact'>
+            <div id='contact' class='tooltip'>Contact Us</div>
+        </div>
+    </div>
+    <!-- End Nav Bullet -->
+    <!--Start Header-->
+    <header class='header'>
+        <div class='container'>
+            <a href='index.html'>
+                <img class='logo' src='images/logo.png' />
+            </a>
+            <div class='search-box'>
+                <input class='search-text' type='text' name='' placeholder='Type To Search'>
+                <a class='search-btn' href='#'>
+                    <i class='fas fa-search'></i>
+                </a>
+            </div>
+            <div class='end'>
+                <!-- <a href='signin.html' class='sign-in'>Sign in</a> -->
+                <select id='change-lang'>
+                    <option  id='en' value='en'>En</option>
+                    <option id='ar' value='ar'>Ar</option>
+                </select>
+                
+                
+                <div class='links-container'>
+                    <ul class='links '>
+                        <li><a id='israeli-prison-link' href='#' class='link' data-menu='.israeli-prison'>Israeli Occupation Prisons</a></li>
+                        <li><a id='stats-link' href='#' class='link' data-menu='.figures'>Statistics and Figures</a></li>
+                        <li><a id='torture-link' href='#' class='link' data-menu='.israeli-torture'>Torture and cruel Treatment</a></li>
+                        <li><a id='pal-prisoners-link' href='#' class='link' data-menu='.pal-prisoners'>Palestinian Prisoners</a></li>
+                        <li><a id='stories-link' href='#' class='link' data-menu='.stories'>Stories of Prisoners</a></li>
+                        <li><a id='contact-link' href='#' class='link' data-menu='.contact'>Contact Us</a></li>
+                    </ul>
+                    <button class='toggle-menu'>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!--End Header-->
+    <!--Start Landing Section-->
+    <section class='landing'>
+        <div class='overlay'></div>
+        <div class='container'>
+            <div class='main-landing'>
+                <h1 id='land-h'>Beyond the Walls</h1>
+                <p id='land-p'>Since the Six Day War in 1967, Israeli occupation has imprisoned more than 700,000 Arabs, mostly for political crimes, The vast majority of these prisoners have been Palestinian, Some died in detention, while others remain in jail, But over the years,
+                    thousands have been free, These are some of their stories.</p>
+            </div>
+            <!--Start Aside -->
+            <aside>
+                <a href='breaking-news.html'>
+                    <div class='slide active'>
+                        <img src='images/breaking-news.jpg'>
+                        <div class='news'>
+                            <h3 id='news1'>Breaking News</h3>
+                            <p id='p-news1'>The Captive movement will start an escalating program in all prisons next Friday</p>
+                        </div>
+                    </div>
+                </a>
+                <a href='breaking01.html'>
+                    <div class='slide'>
+                        <img src='images/participate.jpg'>
+                        <div class='news'>
+                            <h3 id='news2'>Breaking News</h3>
+                            <p id='p-news2'>The participation of the Ministry of Prisoners and Ex-Prisoners in the Solidarity Stand with the Prisoners on Hunger Strike</p>
+                        </div>
+                    </div>
+                </a>
+                <a href='breaking02.html'>
+                    <div class='slide'>
+                        <img src='images/breaking02.jpg'>
+                        <div class='news'>
+                            <h3 id='news3'>Breaking News</h3>
+                            <p id='p-news3'>Torture testimonies for minors during their arrest</p>
+                        </div>
+                    </div>
+                </a>
+                <div class='navigation'>
+                    <i class='fas fa-chevron-left prev-btn'></i>
+                    <i class='fas fa-chevron-right next-btn'></i>
+                </div>
+            </aside>
+            <!--End Aside -->
+        </div>
+    </section>
+    <!--End Landing Section-->
+
+    <!--Start Israeli Prison Section-->
+    <section class='israeli-prison'>
+        <div class='container'>
+            <h2 class='special-heading' id='israeli-prisons'>Israeli Occupation Prisons</h2>
+            <p id='israeli-prisons-p'>Israeli occupation established many detention camps after the June 1967 war in which Israeli occupation occupied the West Bank, including Jerusalem and the Gaza Strip.
+            </p>
+            <div class='prisons'>
+                <a href='acre.html'>
+                    <div class='prison' href='acre.html'>
+                        <h3 id='acre-h'>Acre Prison</h3>
+                        <img src='images/AkkaPrison.jpg'>
+                        <p id='acre-p'>Also known as Akko Prison is a former prison and current museum in Acre, occupied Palestine.</p>
+                    </div>
+                </a>
+                <a href='ayalon.html'>
+                    <div class='prison'>
+                        <h3 id='ayalon-h'>Ayalon Prison</h3>
+                        <img src='images/Ayalon_Prison.jpg'>
+                        <p id='ayalon-p'>Also known by its old name Ramla Prison is a maximum-security prison in Ramla, occupied Palestine.</p>
+                    </div>
+                </a>
+                <a href="ashkelon.html">
+                    <div class='prison'>
+                        <h3 id='ashkelon-h'>Ashkelon Central Prison</h3>
+                        <img src='images/Ashkelon Central Prison.jpeg'>
+                        <p id='ashkelon-p'>It was established during the British Mandate era as the headquarters of the British Army's command in Ashkelon</p>
+                    </div>
+                </a>
+                <a href='maskobiya.html'>
+                    <div class='prison'>
+                        <h3 id='maskobiya-h'>Al-Maskobiya Prison</h3>
+                        <img src='images/maskoniya.jpeg'>
+                        <p id='maskobiya-p'>Al-Maskobiya Prison is located in the northern part of the city of Jerusalem, within the so-called “Russian Clock”</p>
+                    </div>
+                </a>
+                <a href='nafkha.html'>
+                    <div class='prison'>
+                        <h3 id='nafkha-h'>Nafkha Prison</h3>
+                        <img src='images/nafkha.jpg'>
+                        <p id='nafkha-p'>This prison, which is 100 km from the city of Beersheba and 200 km from the city of Jerusalem, is considered one of the harshest Israeli occupation prisons.
+                        </p>
+                    </div>
+                </a>
+                <a href='damon.html'>
+                    <div class='prison'>
+                        <h3 id='damon-h'>Damon Prison</h3>
+                        <img src='images/damon.jpg'>
+                        <p id='damon-p'>This prison was built since the time of the British Mandate as a warehouse for smoke</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!--End Israeli Prison Section-->
+
+    <!--Start Stats Section-->
+    <section class='figures'>
+        <div class='container'>
+            <h2 class='special-heading' id='stat-h'>Statistics and Figures</h2>
+            <p id='stat-p'>An official statistic issued by the Palestinian National Information and Media Center affiliated to WAFA indicates that the number of Palestinian and Arab prisoners in Israeli occupation prisons and detention centers has reached 4850.</p>
+            <div class='content'>
+                <div class='box'>
+                    <span class='number' data-goal='4850'>0</span>
+                    <span class='text' id='total'>Total Number of Political Detainees</span>
+                </div>
+                <div class='box'>
+                    <span class='number' data-goal='43'>0</span>
+                    <span class='text' id='female'>Female Detainees</span>
+                </div>
+                <div class='box'>
+                    <span class='number' data-goal='255'>0</span>
+                    <span class='text' id='childern'>Children Detainees</span>
+                </div>
+                <div class='box'>
+                    <span class='number' data-goal='540'>0</span>
+                    <span class='text' id='admin'>Administrative Detainees</span>
+                </div>
+                <div class='box'>
+                    <span class='number' data-goal='5'>0</span>
+                    <span class='text' id='logisiative'>Palestinian Logisiative Coundl Members</span>
+                </div>
+                <div class='box'>
+                    <span class='number' data-goal='600'>0</span>
+                    <span class='text' id='sick'>Sick Detainees</span>
+                </div>
+                <div class='box'>
+                    <span class='number' data-goal='547'>0</span>
+                    <span class='text' id='serving-life'>Detainees Serving Life Sentences</span>
+                </div>
+                <div class='box'>
+                    <span class='number' data-goal='86'>0</span>
+                    <span class='text' id='serving-20'>Detainees Serving More than 20 Years</span>
+                </div>
+                <div class='box'>
+                    <span class='number' data-goal='16'>0</span>
+                    <span class='text' id='journalists'>Journalists</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Start Stats Section-->
+    <!--Start Torture Section-->
+    <section class='israeli-torture'>
+        <div class='container'>
+            <h2 class='special-heading' id='torture-h'>Torture and Cruel Treatment</h2>
+            <p id='torture-p'>The occupation authorities began to practice torture against Palestinian detainees since their occupation of Palestine, and used several methods to torture detainees psychologically and physically
+            </p>
+            <p id='torture-p2'>
+                The most prominent forms of torture used by the occupation forces in the various interrogation centers:</p>
+            <div class='torture-methods'>
+                <img src='images/torture1.jpg' alt=''>
+                <img src='images/torture2.jpg' alt=''>
+                <img src='images/torture3.jpg' alt=''>
+                <img src='images/torture4.jpg' alt=''>
+                <img src='images/torture5.jpg' alt=''>
+                <img src='images/torture6.jpg' alt=''>
+                <img src='images/torture7.jpeg' alt=''>
+                <img src='images/torture8.jpg' alt=''>
+                <img src='images/torture9.jpg' alt=''>
+                <img src='images/torture10.jpg' alt=''>
+            </div>
+        </div>
+    </section>
+    <!--End Torture Section-->
+    <!--Start Prisoners Section-->
+    <section class='pal-prisoners'>
+        <div class='container'>
+            <h2 class='special-heading' id='pal-h'>Palestinian Prisoners</h2>
+            <p id='pal-p'>The Israeli occupation forces have arrested nearly (700,000) Palestinians since the Palestinian and Arab setback in 1967 until the beginning of this year 2008, and this number includes men, women, children and the elderly from the West Bank, Gaza Strip and the occupied territories in 1948
+            </p>
+            <div class='prisoners'>
+                <div class='prisoner'>
+                    <div class='image'>
+                        <img src='images/zakaria.jpg'>
+                    </div>
+                    <div class='content'>
+                        <h3 id='zakaria-h'>Zakaria Zubeidi</h3>
+                        <p id='zakaria-p'>He is considered a "symbol of the Intifada".</p>
+                    </div>
+                    <div class='info'>
+                        <a href='zakaria.html' id='zakaria-a'>Read More</a>
+                        <i class='fas fa-long-arrow-alt-right'></i>
+                    </div>
+                </div>
+                <div class='prisoner'>
+                    <div class='image'>
+                        <img src='images/marwan.jpg'>
+                    </div>
+                    <div class='content'>
+                        <h3 id='marwan-h'>Marwan ElBarghouti</h3>
+                        <p id='marwan-p'>A political figure convicted and imprisoned for murder by an Israeli occupation court.</p>
+                    </div>
+                    <div class='info'>
+                        <a href='marwan.html' id='marwan-a'>Read More</a>
+                        <i class='fas fa-long-arrow-alt-right'></i>
+                    </div>
+                </div>
+                <div class='prisoner'>
+                    <div class='image'>
+                        <img src='images/karim.jpg'>
+                    </div>
+                    <div class='content'>
+                        <h3 id='karim-h'>Karim Younis</h3>
+                        <p id='karim-p'>The longest serving Palestinian prisoner in Israeli occupation jails</p>
+                    </div>
+                    <div class='info'>
+                        <a href='karim.html' id='karim-a'>Read More</a>
+                        <i class='fas fa-long-arrow-alt-right'></i>
+                    </div>
+                </div>
+                <div class='prisoner'>
+                    <div class='image'>
+                        <img src='images/nael.jfif'>
+                    </div>
+                    <div class='content'>
+                        <h3 id='nael-h'>Nael Elbarghouti</h3>
+                        <p id='nael-p'>The longest serving Palestinian political prisoner in Israeli occupation jail.</p>
+                    </div>
+                    <div class='info'>
+                        <a href='nael.html' id='nael-a'>Read More</a>
+                        <i class='fas fa-long-arrow-alt-right'></i>
+                    </div>
+                </div>
+                <div class='prisoner'>
+                    <div class='image'>
+                        <img src='images/ahmad.jpg'>
+                    </div>
+                    <div class='content'>
+                        <h3 id='ahmad-h'>Ahmad Manasra</h3>
+                        <p id='ahmad-p'>A Palestinian child, was born on January 22, 2002 in Beit Hanina, occupied Jerusalem</p>
+                    </div>
+                    <div class='info'>
+                        <a href='ahmad.html' id='ahmad-a'>Read More</a>
+                        <i class='fas fa-long-arrow-alt-right'></i>
+                    </div>
+                </div>
+                <div class='prisoner'>
+                    <div class='image'>
+                        <img src='images/israa.jpeg'>
+                    </div>
+                    <div class='content'>
+                        <h3 id='israa-h'>Israa Jaabis</h3>
+                        <p id='israa-p'>A Palestinian woman who has been imprisoned since 2015 in Israeli occupation prison.</p>
+                    </div>
+                    <div class='info'>
+                        <a href='israa.html ' id='israa-a'>Read More</a>
+                        <i class='fas fa-long-arrow-alt-right'></i>
+                    </div>
+                </div>
+                <div class='prisoner'>
+                    <div class='image'>
+                        <img src='images/maher.jfif'>
+                    </div>
+                    <div class='content'>
+                        <h3 id='maher-h'>Maher Younes</h3>
+                        <p id='maher-p'>The second oldest Palestinian prisoner in the prisons of the occupation, after his cousin, the dean of prisoners, Karim Younis.</p>
+                    </div>
+                    <div class='info'>
+                        <a href='maher.html' id='maher-a'>Read More</a>
+                        <i class='fas fa-long-arrow-alt-right'></i>
+                    </div>
+                </div>
+                <div class='prisoner'>
+                    <div class='image'>
+                        <img src='images/yaqoob.jpg'>
+                    </div>
+                    <div class='content'>
+                        <h3 id='yaqoob-h'>Yaqoob Qadri</h3>
+                        <p id='yaqoob-p'>A Palestinian prisoner is sentenced to two life imprisonment plus thirty-five years
+                        </p>
+                    </div>
+                    <div class='info'>
+                        <a href='yaqoob.html' id='yaqoob-a'>Read More</a>
+                        <i class='fas fa-long-arrow-alt-right'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Prisoners Section-->
+    <!--Start Stories Section-->
+    <section class='stories'>
+        <div class='container'>
+            <h2 class='special-heading' id='stories-prisoners'>Stories of Prisoners</h2>
+            <div class='content'>
+                <div class='story'>
+                    <p id='story1'><q>The Israeli occupation do this [imprison you] in order to turn you from a human being into a creature barely alive. Someone forgotten. Living only to eat and sleep</q></p>
+                    <span id='story1-name'>Saleh Abu Laban</span>
+                    <span id='story1-position'>Former Prisoner</span>
+                </div>
+                <div class='story'>
+                    <p id='story2'><q>I hate to sit facing the wall. Sitting facing a wall reminds me of jail. It means humiliation and insecurity.</q></p>
+                    <span id='story2-name'>Saleh Abu Laban</span>
+                    <span id='story2-position'>Former Prisoner</span>
+                </div>
+                <div class='story'>
+                    <p id='story3'><q>I dream about [prison]... I see myself in the cell, on strike, reading or writing. The picture lives inside me.</q></p>
+                    <span id='story3-name'>Ahmed Abu Hedbah</span>
+                    <span id='story3-position'>Former Prisoner</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--End Stories Section-->
+    <!--Start Contact Section -->
+    <section class='contact'>
+        <div class='container'>
+            <h2 class='special-heading' id='contact-us'>Contact Us</h2>
+            <form action=''>
+                <div class='left'>
+                    <input type='text' placeholder='Your Name' name='username'>
+                    <input type='text' placeholder='Your Phone' name='phone'>
+                    <input type='email' placeholder='Your Email' name='email'>
+                    <input type='text' placeholder='Subject' name='subject'>
+                </div>
+                <div class='right'>
+                    <textarea name='message' placeholder='Your Message'></textarea>
+                    <input type='submit' value='Send' >
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--End Contact Section -->
+
+    <script>
+      
+        </script>
+
+    <script src='js/master.js'></script>
+    <!-- <script src='js/language.js'></script> -->
+    
+</body>
+
+</html>

@@ -1,0 +1,1628 @@
+    /*Start Global Rules*/
+    
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0
+    }
+    
+     :root {
+        --main-color: rgb(53, 102, 236);
+        --secondery-color: rgb(65, 65, 65);
+        --white: #fff;
+        --background-color: #F1F1F1;
+        --main-padding: 50px 0 70px;
+    }
+    
+    body {
+        font-family: source-sans-pro, sans-serif;
+    }
+    
+    .container {
+        width: 80%;
+        margin: auto
+    }
+    /*End Global Rules*/
+    /*Start Screen Responsive*/
+    /*Small Screen*/
+    
+    @media (min-width:768px) {
+        .container {
+            width: 750px
+        }
+    }
+    /*Medium Screen*/
+    
+    @media (min-width:992px) {
+        .container {
+            width: 970px
+        }
+    }
+    /*Large Screen*/
+    
+    @media (min-width:1200px) {
+        .container {
+            width: 1170px
+        }
+    }
+    /*End Screen Responsive*/
+    /* Start Compontent*/
+    
+    .special-heading {
+        text-align: center !important;
+        margin: 50px auto;
+        border: 2px solid black;
+        padding: 10px 20px;
+        font-size: 30px;
+        width: fit-content !important;
+        position: relative;
+        z-index: 0;
+        transition: .7s;
+        -webkit-transition: .7s;
+        -ms-transition: .7s;
+        -o-transition: .7s;
+    }
+    
+    .special-heading::before,
+    .special-heading::after {
+        content: '';
+        width: 12px;
+        height: 12px;
+        background-color: var(--main-color);
+        position: absolute;
+        top: 50%;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+    
+    .special-heading::before {
+        left: -30px;
+    }
+    
+    .special-heading::after {
+        right: -30px;
+    }
+    
+    .special-heading:hover::before {
+        z-index: -1;
+        animation: left-move 0.5s linear forwards;
+        -webkit-animation: left-move 0.5s linear forwards;
+    }
+    
+    .special-heading:hover::after {
+        z-index: -1;
+        animation: right-move 0.5s linear forwards;
+        -webkit-animation: right-move 0.5s linear forwards;
+    }
+    
+    .special-heading:hover {
+        color: white;
+        border-color: white;
+        transition-delay: 0.5s;
+    }
+    
+    .special-heading+p {
+        padding: 5px 0 0;
+        font-size: 1.4em;
+        font-weight: 400;
+        line-height: 1.7;
+        text-align: center;
+        margin-bottom: 40px;
+        color: var(--secondery-color)
+    }
+    
+    .main-p {
+        font-size: 2em;
+        color: white;
+        font-weight: 400;
+        max-width: 700px;
+        line-height: 1.7;
+    }
+    /* End Compontent*/
+    /* Start Setting Box */
+    
+    .settings-box {
+        position: fixed;
+        top: 0;
+        left: -200px;
+        background-color: #FFF;
+        width: 200px;
+        z-index: 3;
+        border: 1px solid #EEE;
+        min-height: 100vh;
+        transition: .3s;
+        -webkit-transition: .3s;
+        -ms-transition: .3s;
+        -o-transition: .3s;
+    }
+    
+    .settings-box.open {
+        left: 0
+    }
+    
+    .settings-box .toggle-settings {
+        position: absolute;
+        top: 100px;
+        right: -30px;
+        background-color: #FFF;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    .settings-box .toggle-settings .fa-spin {
+        width: 30px;
+        padding: 8px 0;
+    }
+    
+    .settings-box .settings-container .option-box {
+        padding: 10px;
+        text-align: center;
+        background-color: #EEE;
+        margin: 10px
+    }
+    
+    .settings-box .settings-container .option-box h4 {
+        margin-bottom: 15px;
+        color: #666;
+        font-size: 14px
+    }
+    
+    .settings-box .settings-container .option-box .colors-list {
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        margin: 10px 0 0
+    }
+    
+    .settings-box .settings-container .option-box .colors-list li {
+        width: 24px;
+        height: 24px;
+        background-color: #333;
+        cursor: pointer;
+        border: 3px solid #EEE;
+        display: inline-block;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    
+    .settings-box .settings-container .option-box .colors-list li.active {
+        border-color: #FFF
+    }
+    
+    .settings-box .settings-container .option-box .colors-list li:first-of-type {
+        background-color: #3566ec
+    }
+    
+    .settings-box .settings-container .option-box .colors-list li:nth-of-type(2) {
+        background-color: #E91E63
+    }
+    
+    .settings-box .settings-container .option-box .colors-list li:nth-of-type(3) {
+        background-color: #009688
+    }
+    
+    .settings-box .settings-container .option-box .colors-list li:nth-of-type(4) {
+        background-color: #03A9F4
+    }
+    
+    .settings-box .settings-container .option-box .colors-list li:nth-of-type(5) {
+        background-color: #4CAF50
+    }
+    
+    .settings-box .settings-container .option-box .yes,
+    .settings-box .settings-container .option-box .no {
+        width: 50px;
+        background-color: var(--main-color);
+        color: #FFF;
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 12px;
+        padding: 4px 10px;
+        font-weight: bold;
+        opacity: 0.5;
+        cursor: pointer;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+    }
+    
+    .settings-box .settings-container .option-box span.active {
+        opacity: 1;
+    }
+    
+    .settings-box .settings-container .reset-options {
+        background-color: red;
+        border: none;
+        width: 178px;
+        margin: 10px auto;
+        display: block;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+    }
+    /* End Setting Box */
+    /* Start Nav Bullet */
+    
+    .nav-bullets {
+        position: fixed;
+        right: 0;
+        top: 50%;
+        width: 40px;
+        z-index: 3;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+    
+    .nav-bullets .bullet {
+        width: 20px;
+        height: 20px;
+        border: 3px solid var(--main-color);
+        margin: 10px auto;
+        cursor: pointer;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        z-index: 3;
+        position: relative;
+    }
+    
+    .nav-bullets .bullet:hover .tooltip {
+        display: block
+    }
+    
+    .nav-bullets .bullet .tooltip {
+        background-color: var(--main-color);
+        min-width: 250px;
+        color: #FFF;
+        padding: 4px;
+        position: absolute;
+        right: 32px;
+        top: -5px;
+        text-align: center;
+        cursor: default;
+        pointer-events: none;
+        display: none;
+        z-index: 1000;
+    }
+    
+    .nav-bullets .bullet .tooltip::before {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 8px;
+        border-color: transparent transparent transparent var(--main-color);
+        height: 0;
+        width: 0;
+        right: -15px;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+    /* End Nav Bullet */
+    /*Start Header */
+    
+    header {
+        background-color: rgb(56, 56, 56);
+    }
+    
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative
+    }
+    
+    header .container .logo {
+        width: 70px
+    }
+    
+    header .container .search-box {
+        background-color: white;
+        height: 30px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        -webkit-border-radius: 30px;
+        -ms-border-radius: 30px;
+        -o-border-radius: 30px;
+    }
+    
+    header .container .search-box .search-text {
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        color: var(--secondery-color);
+        font-size: 16px;
+        width: 240px;
+        transition: 0.4s;
+        -webkit-transition: 0.4s;
+        -ms-transition: 0.4s;
+        -o-transition: 0.4s;
+    }
+    /* Search Mini  */
+    
+    @media(max-width: 768px) {
+        header .container .search-box .search-text {
+            width: 0;
+        }
+        header .container .search-box .search-text.active {
+            width: 100%;
+            position: relative;
+            z-index: 7
+        }
+        header .container .search-box .search-text.active .search-box {
+            background: white;
+        }
+    }
+    
+    header .container .search-box .search-btn {
+        color: white;
+        float: right;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        right: -10px;
+        /* left: -250px; */
+        background-color: var(--main-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    
+    header .end {
+        display: flex;
+        justify-content: space-between;
+        /* width: 220px */
+    }
+
+    header .container .end select {
+        height: 25px;
+        width: 50px;
+        margin: 0 5px
+    }
+    
+    header .links-container {
+        width: 100%;
+        text-align: right;
+    }
+    
+    header .links-container .links {
+        display: none;
+    }
+    
+    header .links-container .links.open {
+        list-style: none;
+        background-color: white;
+        padding: 10px;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50px;
+        width: 100%;
+        text-align: left;
+        z-index: 5;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+    }
+    
+    header .links-container .links li {
+        display: block;
+        margin: 15px;
+        position: relative;
+    }
+    
+    header .links-container .links li::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: rgb(248, 248, 248);
+        top: 17px;
+        left: 0;
+    }
+    
+    header .links-container .links li:hover a {
+        padding-left: 10px;
+        color: var(--main-color)
+    }
+    
+    header .links-container .links li a {
+        color: var(--secondery-color);
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+    }
+    
+    header .links-container .links li a:hover,
+    header .links-container .links li a:active {
+        color: var(--main-color)
+    }
+    
+    header .links-container .toggle-menu {
+        background: none;
+        border: none;
+        width: 30px;
+        cursor: pointer;
+        position: relative;
+        margin-top: 3px
+    }
+    
+    header .links-container .toggle-menu.menu-active::before {
+        content: '';
+        position: absolute;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent white transparent;
+        bottom: -15px;
+        left: 10px
+    }
+    
+    header .links-container .toggle-menu:focus {
+        outline: none
+    }
+    
+    header .links-container .toggle-menu span {
+        display: block;
+        background-color: #FFF;
+        height: 4px;
+        margin-bottom: 4px
+    }
+    /*End Header */
+    /*Start Landing Section*/
+    
+    .landing {
+        width: 100%;
+        min-height: 600px;
+        background-image: url(../images/landing.jpg);
+        background-size: cover;
+        position: relative;
+        padding: var(--main-padding);
+    }
+    
+    .landing .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0, 0.6);
+        left: 0;
+        top: 0;
+        z-index: 1
+    }
+    
+    .landing .container {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-areas: 'main main main main main main main main aside aside';
+        position: relative;
+        z-index: 2
+    }
+    
+    @media(max-width: 992px) {
+        .landing .container {
+            grid-template-areas: 'main main main main main main main main main main' 'aside aside aside aside aside aside aside aside aside aside';
+        }
+    }
+    
+    @media(max-width: 768px) {
+        .landing .container {
+            grid-template-areas: 'main main main main main main main main main main' 'aside aside aside aside aside aside aside aside aside aside';
+        }
+    }
+    
+    .landing .main-landing {
+        grid-area: main;
+        max-width: 600px
+    }
+    
+    .landing .container h1 {
+        font-size: 3.2em;
+        font-weight: 600;
+        color: var(--main-color);
+        padding: 20px 0 30px
+    }
+    
+    
+    
+    @media (max-width:992px) {
+        .landing .container h1 {
+            font-size: 3em
+        }
+    }
+    
+    @media (max-width:768px) {
+        .landing .container h1 {
+            font-size: 2em
+        }
+    }
+    
+    .landing .container p {
+        font-size: 1.8em;
+        color: white;
+        font-weight: 400;
+        max-width: 700px;
+        line-height: 1.7;
+    }
+    
+    @media (max-width: 1200px) {
+        .landing .container p {
+            font-size: 1.7em;
+            max-width: 600px
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .landing .container p {
+            font-size: 1.6em;
+            max-width: 800
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .landing .container p {
+            font-size: 1.5em;
+            max-width: 800px
+        }
+    }
+    /*Start Aside*/
+    
+    aside {
+        grid-area: aside;
+        margin-top: 50px;
+        max-width: 250px;
+        height: 300px;
+        background-color: #333;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    @media (max-width: 992px) {
+        aside {
+            max-width: 600px;
+            height: 150px;
+        }
+        aside img {
+            width: 50%;
+            max-height: 250px
+        }
+        aside p {
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        aside {
+            max-width: 500px;
+            height: 170px;
+        }
+        aside img {
+            width: 500%;
+            display: block;
+            max-height: 250px
+        }
+        aside p {
+            width: 100%;
+        }
+    }
+    
+    aside a {
+        text-decoration: none;
+    }
+    
+    aside .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: circle(0% at 0 50%);
+    }
+    
+    aside .slide.active {
+        clip-path: circle(150% at 0 50%);
+        transition: 1s;
+        -webkit-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+    }
+    
+    aside .slide img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.3;
+    }
+    
+    aside .slide .news {
+        position: absolute;
+        width: 100%;
+    }
+    
+    aside .slide .news h3 {
+        font-size: 1.5em;
+        color: rgb(218, 218, 218);
+        padding: 5px 10px;
+        text-transform: capitalize;
+        margin-bottom: 18px;
+        text-align: center;
+        background-color: red
+    }
+    
+    aside .slide .news p {
+        font-size: 20px !important;
+        padding: 0 20px 
+    }
+    
+    aside .navigation {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        opacity: 0;
+        transition: opacity 0.5s liner;
+        -webkit-transition: opacity 0.5s liner;
+        -ms-transition: opacity 0.5s liner;
+        -o-transition: opacity 0.5s liner;
+    }
+    
+    aside:hover .navigation {
+        opacity: 1
+    }
+    
+    aside .navigation .prev-btn,
+    aside .navigation .next-btn {
+        z-index: 5;
+        font-size: 17px;
+        color: var(--secondery-color);
+        padding: 1px;
+        cursor: pointer;
+        background-color: rgb(255, 255, 255, 0.8)
+    }
+    /*End Aside*/
+    /*End Landing Section*/
+    /*Start Israeli Prisons*/
+    
+    .israeli-prison {
+        width: 100%;
+        padding: var(--main-padding);
+    }
+    
+    .israeli-prison .prisons {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 11.5%;
+        row-gap: 50px;
+        text-align: center;
+    }
+    
+    @media(max-width:768px) {
+        .israeli-prison .prisons {
+            margin-top: 30px
+        }
+    }
+    
+    .israeli-prison .prisons a {
+        text-decoration: none
+    }
+    
+    .israeli-prison .prisons .prison {
+        width: 300px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        height: 200px;
+        position: relative;
+    }
+    
+    @media(max-width:768px) {
+        .israeli-prison .prisons .prison {
+            margin: 40px auto
+        }
+    }
+    
+    .israeli-prison .prisons .prison h3 {
+        font-size: 20px;
+        color: var(--main-color);
+        padding: 10px;
+        text-transform: capitalize;
+        margin-bottom: 18px;
+        /* top: 10px; */
+        text-align: center;
+    }
+    
+    .israeli-prison .prisons .prison img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 8em;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transition: 1s;
+        -webkit-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+    }
+    
+    .israeli-prison .prisons .prison:hover img {
+        opacity: 0.3;
+    }
+    
+    .israeli-prison .prisons .prison p {
+        font-size: 16px;
+        top: 100px;
+        padding: 0 10px;
+        color: var(--secondery-color);
+        position: absolute;
+        opacity: 0;
+        line-height: 1.5
+    }
+    /* .israeli-prison .prisons .prison:hover h3, */
+    
+    .israeli-prison .prisons .prison:hover p {
+        opacity: 1;
+        transition-duration: .5s;
+    }
+    /* .israeli-prison .prisons .prison:hover h3 {
+    transition-delay: 0.30s;
+} */
+    
+    .israeli-prison .prisons .prison:hover p {
+        transition-delay: 0.60s;
+    }
+    /*End Israeli Prisons*/
+    /*Start figures Section*/
+    
+    .figures {
+        background-color: #EEE;
+        padding: var(--main-padding);
+    }
+    
+    .figures .container .content {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    
+    .figures .container .box {
+        background-color: white;
+        padding: 30px 15px;
+        text-align: center;
+        position: relative;
+        border: 0;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+    }
+    
+    .figures .container .box span {
+        display: block
+    }
+    
+    .figures .container .box span:first-of-type {
+        width: 120px;
+        height: 120px;
+        text-align: center;
+        background-color: var(--main-color);
+        color: White;
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 120px;
+        margin: auto;
+        border: 3px solid #cccbcb;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    
+    .figures .container .box span:last-of-type {
+        margin: 30px auto;
+        max-width: 160px;
+        font-size: 18px;
+        font-family: serif;
+        color: var(--secondery-color);
+    }
+    /*End Stats Section*/
+    /*Start Torture Section*/
+    
+    .israeli-torture {
+        padding: var(--main-padding);
+    }
+    
+    .israeli-torture p:last-of-type {
+        color: var(--secondery-color);
+        font-size: 20px;
+        margin-bottom: 20px
+    }
+    
+    .israeli-torture .torture-methods {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 30px;
+        text-align: center;
+    }
+    
+    .israeli-torture .torture-methods img {
+        width: 100%;
+        height: 200px;
+        padding: 3px;
+        background-color: #F6F6F6;
+        border: 1px solid #ccc;
+        margin: 5px
+    }
+    
+    .popup-overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: rgb(0, 0, 0, .7);
+        left: 0;
+        top: 0;
+        z-index: 3
+    }
+    
+    .popup-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #FFF;
+        border: 1px solid #CCC;
+        padding: 20px;
+        z-index: 4;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+    }
+    
+    .popup-box h3 {
+        font-weight: bold;
+        text-align: center;
+        margin: 0 0 20px;
+        color: var(--main-color);
+    }
+    
+    .popup-box img {
+        max-width: 100%
+    }
+    
+    .close-button {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        background-color: var(--main-color);
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #FFF;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+ 
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    /*End Torture Section*/
+    /* Start Palestinian Prisoners Section*/
+    
+    .pal-prisoners {
+        background-color: var(--background-color);
+        padding: var(--main-padding)
+    }
+    
+    .pal-prisoners .prisoners {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-gap: 40px;
+    }
+    
+    .pal-prisoners .prisoners a {
+        text-decoration: none;
+    }
+    
+    .pal-prisoners .prisoners .prisoner {
+        box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+        background-color: White;
+        border: 6px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        -webkit-transition: transform 0.3s, box-shadow 0.3s;
+       
+        -ms-transition: transform 0.3s, box-shadow 0.3s;
+        -o-transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .pal-prisoners .prisoners .prisoner:hover {
+        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+      
+        -ms-transform: translateY(-10px);
+        -o-transform: translateY(-10px);
+        box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+    }
+    
+    .pal-prisoners .prisoners .prisoner .image {
+        min-width: 240px;
+        height: 180px;
+    }
+    
+    .pal-prisoners .prisoners .prisoner .image img {
+        width: 100%;
+        height: 100%
+    }
+    
+    .pal-prisoners .prisoners .prisoner .content {
+        padding: 20px
+    }
+    
+    .pal-prisoners .prisoners .prisoner .content h3 {
+        margin: 0;
+        text-align: center;
+        color: var(--main-color)
+    }
+    
+    .pal-prisoners .prisoners .prisoner .content p {
+        margin: 10px 0 0;
+        line-height: 1.5;
+        color: var(--secondery-color)
+    }
+    
+    .pal-prisoners .prisoners .prisoner .info {
+        padding: 20px;
+        border-top: 1px solid #E6E6E7;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .pal-prisoners .prisoners .prisoner .info a {
+        color: var(--main-color);
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    .pal-prisoners .prisoners .prisoner .info i {
+        color: var(--main-color)
+    }
+    
+    .pal-prisoners .prisoners .prisoner:hover .info i {
+        animation: moving-arrow 0.6s linear infinite;
+        -webkit-animation: moving-arrow 0.6s linear infinite;
+    }
+    
+    @media(max-width: 992px) {
+        .pal-prisoners .prisoners .prisoner .content p {
+            padding: 0 2em;
+            text-align: center;
+        }
+    }
+    
+    @media(max-width: 768px) {
+        .pal-prisoners .prisoners .prisoner .content p {
+            padding: 0 2em;
+            text-align: center;
+        }
+    }
+    /* End Palestinian Prisoners Section*/
+    /*Start Stories Section*/
+    
+    .stories {
+        background-color: #fff;
+        padding: var(--main-padding);
+    }
+    
+    @media (max-width: 768px) {
+        .stories h2 {
+            font-size: 2em;
+        }
+    }
+    
+    .stories .content {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 30px;
+        padding: 2em 0
+    }
+    
+    @media (max-width: 768px) {
+        .stories .content {
+            padding: 2em 0
+        }
+    }
+    
+    .stories .content .story {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    
+    @media (max-width:768px) {
+        .stories .content .story {
+            margin: 20px 0
+        }
+    }
+    
+    .stories .content .story p {
+        font-size: 1.7em;
+        padding: 2em 2em 0;
+        color: var(--secondery-color)
+    }
+    
+    .stories .content .story span {
+        display: block;
+        margin: 1.5em 0;
+        font-size: 1.2em;
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--secondery-color)
+    }
+    
+    .stories .content .story span:first-of-type {
+        color: var(--main-color)
+    }
+    /*End Stories Section*/
+    /*Start Prison Section*/
+    
+    .prison-stories {
+        background-color: white;
+        padding: var(--main-padding);
+    }
+    /* .prison-stories h2 {
+        font-size: 3em;
+        color: rgb(56, 56, 56);
+        text-transform: capitalize;
+        padding: 1em 0 0;
+        text-align: center;
+    } */
+    
+    .prison-stories p {
+        padding: 10px 0 0;
+        font-size: 2em;
+        font-weight: 400;
+        line-height: 1.7
+    }
+    
+    @media (max-width: 768px) {
+        .prison-stories p {
+            font-size: 1.7em;
+        }
+    }
+    /*End Prison Section*/
+    /* Start Contact Section */
+    
+    .contact {
+        position: relative;
+        background-color: var(--background-color);
+        padding: var(--main-padding);
+    }
+    
+    .contact:before {
+        content: '';
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: var(--main-color)
+    }
+    
+    .contact:after {
+        content: '';
+        width: 50%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        position: absolute;
+        background-color: rgb(56, 56, 56)
+    }
+    
+    .contact .container {
+        position: relative;
+        z-index: 2
+    }
+    
+    .contact .container h2 {
+        color: white
+    }
+    
+    .contact form {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+        gap: 2%;
+        max-width: 800px;
+        margin: auto
+    }
+    
+    @media (max-width: 768px) {
+        .contact form {
+            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        }
+    }
+    
+    .contact form input:not([type='submit']),
+    .contact form textarea {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-color: transparent;
+        background-color: white
+    }
+    
+    .contact form input:not([type='submit']):focus,
+    .contact form textarea:focus {
+        outline: 1px solid var(--main-color)
+    }
+    
+    .contact form textarea {
+        height: 150px;
+    }
+    
+    .contact form input[type='submit'] {
+        width: 100%;
+        padding: 10px;
+        color: #FFF;
+        border-color: transparent;
+        background-color: var(--main-color);
+        cursor: pointer;
+        border: 1px solid rgba(253, 253, 253, 0.753)
+    }
+    
+    .contact form textarea:focus::-webkit-input-placeholder,
+    .contact form input:not([type='submit']):focus::-webkit-input-placeholder {
+        opacity: 0;
+        transition: .3s;
+        -webkit-transition: .3s;
+      
+        -ms-transition: .3s;
+        -o-transition: .3s;
+    }
+    
+    /* .contact form textarea:focus::-moz-input-placeholder,
+    .contact form input:not([type='submit']):focus::-moz-input-placeholder {
+        opacity: 0;
+        transition: .3s;
+        -webkit-transition: .3s;
+        
+        -ms-transition: .3s;
+        -o-transition: .3s;
+    }
+     */
+    .contact form textarea:focus::-ms-input-placeholder,
+    .contact form input:not([type='submit']):focus::-ms-input-placeholder {
+        opacity: 0;
+        transition: .3s;
+        -webkit-transition: .3s;
+        
+        -ms-transition: .3s;
+        -o-transition: .3s;
+    }
+    
+    .contact form textarea:focus::placeholder,
+    .contact form input:not([type='submit']):focus::placeholder {
+        opacity: 0;
+        transition: .3s;
+        -webkit-transition: .3s;
+        
+        -ms-transition: .3s;
+        -o-transition: .3s;
+    }
+    /* End Contact Section */
+    /* Start Animation */
+    
+    @keyframes left-move {
+        50% {
+            left: 0;
+            width: 12px;
+            height: 12px
+        }
+        100% {
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            -webkit-border-radius: 0;
+           
+            -ms-border-radius: 0;
+            -o-border-radius: 0;
+        }
+    }
+    
+    @keyframes right-move {
+        50% {
+            right: 0;
+            width: 12px;
+            height: 12px
+        }
+        100% {
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            -o-border-radius: 0;
+        }
+    }
+    
+    @keyframes moving-arrow {
+        100% {
+            transform: translateX(10px);
+            -webkit-transform: translateX(10px);
+          
+            -ms-transform: translateX(10px);
+            -o-transform: translateX(10px);
+        }
+    }
+    /* End Animation */
+    /* Start Breaking News Page */
+    
+    .breaking-news {
+        padding: 40px 0;
+    }
+    
+    .breaking-news .container {
+        padding: 0 100px
+    }
+    
+    @media (max-width: 768px) {
+        .breaking-news .container {
+            padding: 0
+        }
+    }
+    
+    .breaking-news .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+        max-width: 600px
+    }
+    
+    .breaking-news .image img {
+        width: 100%;
+        box-shadow: rgb(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    
+    .breaking-news p {
+        padding: 10px 0 0;
+        font-size: 1.7em;
+        font-weight: 400;
+        line-height: 1.7;
+        color: var(--secondery-color)
+    }
+    /* End Breaking News Page */
+    /*Start  Prison Page*/
+    
+    .prison-page .container {
+        padding: 0 100px
+    }
+    
+    @media (max-width: 992px) {
+        .prison-page .container {
+            padding: 0
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .prison-page .container {
+            padding: 0
+        }
+    }
+    
+    .prison-page .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px  auto ;
+        max-width: 300px;
+        width: 100%
+        
+    }
+    
+    .prison-page .image img {
+        box-shadow: rgb(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        max-height: 300px;
+        
+    }
+    
+    .prison-page p {
+        
+        padding: 10px 0 0;
+        font-size: 1.7em;
+        font-weight: 400;
+        line-height: 1.7;
+        color: var(--secondery-color)
+    }
+    /*End  Prison Page*/
+    /* Start Palestinian Prisoners */
+    
+    .pal-prisoners-page .container {
+        padding: 0 100px
+    }
+    
+    @media (max-width: 768px) {
+        .pal-prisoners-page .container {
+            padding: 0
+        }
+    }
+    
+    .pal-prisoners-page .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        max-width: 500px;
+        width: 100%;
+        
+       
+    }
+    
+    .pal-prisoners-page .image img {
+        width: 100%;
+        max-height: 300px
+        
+    }
+    
+    .pal-prisoners-page p {
+        margin-top: 30px;
+        padding: 10px 0 0;
+        font-size: 1.7em;
+        font-weight: 400;
+        line-height: 1.7;
+        color: var(--secondery-color)
+    }
+    /* .table {
+        display: table;
+        width: 600px;
+        border: 1px solid #CCC;
+        text-align: center;
+    }
+    
+    .table .row {
+        display: table-row;
+    }
+    
+    .table .row .cell {
+        display: table-cell;
+        padding: 10px;
+        border: 1px solid #CCC;
+    } */
+    /* End Palestinian Prisoners */
+
+
+    /* Start Sign in Page */
+    .signin {
+        position: relative;
+        width: 100%;
+        min-height: calc(100vh - 59.5px);
+        background-color: #FFF;
+        overflow: hidden;
+    }
+
+    .signin::before {
+        content: '';
+        position: absolute;
+        width: 2000px;
+        height: 2000px;
+        border-radius: 50%;
+        background: linear-gradient(-45deg, var(--main-color), rgb(185, 185, 185));
+        top: -10px;
+        right: 48%;
+        transform: translateY(-50%);
+        z-index: 6
+    }
+    .signin .form-container {
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        
+    }
+    .signin .form-container .signin-signup {
+        position: absolute;
+        top: 50%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr;
+        z-index: 5
+    }
+    .signin .form-container form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 5rem;
+        overflow: hidden;
+        grid-column: 1 /2;
+        grid-row: 1 / 2 
+    }
+    .signin .form-container form.sign-in-form {
+        z-index: 2;
+        
+    }
+    .signin .form-container form.sign-up-form {
+        z-index: 1;
+        opacity: 0;
+    }
+    .signin .form-container form .title {
+        font-size: 2.2rem;
+        color: var(--secondery-color);
+        margin-bottom: 10px;
+
+    }
+    .signin .form-container form .input-field {
+        max-width: 380px;
+        width: 100%;
+        height: 55px;
+        background-color: #f0f0f0;
+        margin: 10px 0; 
+        border-radius: 55px;
+        display: grid;
+        grid-template-columns: 15% 85%;
+        padding: 0.4rem
+
+    }
+    .signin .form-container form .input-field i {
+        text-align: center;
+        line-height: 55px;
+        color: #acacac;
+        font-size: 1.1rem
+    }
+    .signin .form-container form .input-field input {
+        background: none;
+        outline: none;
+        border: none;
+        line-height: 1;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    .signin .form-container form .input-field input::placeholder {
+        color: #aaa;
+        font-weight: 500;
+    }
+
+    /* .signin .form-container form  */
+    .btn {
+        width: 150px;
+        height: 49px;
+        border: none;
+        outline: none;
+        border-radius: 49px;
+        cursor: pointer;
+        background-color: var(--main-color);
+        color: #fff;
+        font-weight: 600;
+        margin: 10px 0;
+        transition: 0.5 ;
+
+    }
+    .signin .form-container form .btn:hover {
+        opacity: 0.8;
+    }
+
+    .panels-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        height: 0;
+        background-color: green;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .panels-container .panel {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-around;
+        text-align: center;
+        z-index: 7;
+    }
+
+    .panels-container .left-panel {
+        pointer-events: all;
+        padding: 3em 17% 2rem 12%;
+    }
+    
+    .panels-container .right-panel {
+        pointer-events: none;
+        padding: 3em 12% 2rem 17%;
+    }
+    .panels-container .panel .content {
+        color: #fff;
+        transition: .9s .6s ease-in-out;
+    }
+    .panels-container .right-panel .content {
+       transform: translateX(800px);
+    }
+    .panels-container .panel .content h3{
+        font-weight: 600;
+        line-height: 1;
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+    .panels-container .panel .content .btn {
+        width: 150px;
+        height: 49px;
+        border: none;
+        outline: none;
+        border-radius: 49px;
+        cursor: pointer;
+        background-color: var(--main-color);
+        color: #fff;
+        font-weight: 600;
+        margin: 10px 0;
+        transition: 0.5 ;
+    }
+    .panels-container .panel .content .btn:hover {
+        opacity: 0.8;
+    }
+    .panels-container .panel .content .btn.transparent {
+        margin: 0;
+        background-color: none;
+        border: 2px solid #fff;
+        width: 130px;
+        height: 41px;
+        font-weight: 600;
+        font-size: 0.8rem;
+    }
+    /* Animation */
+    .signin.sign-up-mode::before {
+        transform: translate(100%, -50%);
+        right: 52%
+    }
+    .signin.sign-up-mode .left-panel {
+        pointer-events:none;
+    }
+    .signin.sign-up-mode .right-panel {
+        pointer-events:all;
+    }
+    .signin.sign-up-mode .left-panel .content {
+        transform: translateY(-800px);
+    }
+    .signin.sign-in-mode .right-panel .content {
+        transform: translateY(0);
+    }
+    /* End Sign in Page */
+  
